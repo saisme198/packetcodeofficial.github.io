@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">		
+   
+ <title>Contact-US</title> 
+<link rel="stylesheet" type="text/css" href="css/basic.css">		
+  <link rel="stylesheet" type="text/css" href="css/cont.css">	
+   	
+  </head>
+
+<body>
+
+ <header>
+
+        <h3>
+
+           <i class="fa-solid fa-location-dot"> Hyderbad &nbsp; &nbsp;</i>
+           <i class="fa-solid fa-mobile-retro">  +91 80749 07930 &nbsp;&nbsp;</i>
+           <i class="fa-solid fa-envelope">  chandu.ygdl@gmail.com &nbsp;&nbsp;&nbsp;&nbsp;</i>
+           <a href="{{url_for('contact')}}"><i class="fa fa-book" style="font-size:20px;color:white"> Appointment?</i></a>
+
+        </h3>
+
+ </header>
+<div class="navbar">
+<ul>
+	<img src="images/chandana logo.jpg" width="160" height="90"/>
+	<li><a href="index.html">Home</a></li>	
+	<li><a href="about.html">About</a></li>	
+	<li><a href="services.html">Services</a></li>	
+	<li><a href="gynec.html">Gynacology</a></li>	
+	<li><a href="lap.html">Laproscopy</a></li>	
+	<li><a href="mat.html">Maternity</a></li>
+	<li><a href="contact.html">Contact-US</a></li>	
+</ul>
+</div>
+
+
+<br>
+    <div class="container">
+	 
+    <img  src= "images/contact.jpg" width=40% height="560"/>
+    <link rel="stylesheet" type="text/css" href="css/cont.css">
+
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h4><b>Please send  your query here...</b></h4><br>
+                <Input type="text" id="name" placeholder="Your name" required>
+                <Input type="email" id="email" placeholder="Email ID" required>
+                <Input type="text" id="phone" placeholder="Phone no." required>
+                <textarea id="message" rows="4" placeholder="How we can help you?"></textarea>
+                <button type="submit"><b>Send</b></button>
+            </form>
+     </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "saisme198@gmail.com",
+                Password : "S8499854526",
+                To : 'sais4me@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New Case inquiry",
+                Body : "And this is the body"
+            }).then(
+            message => alert(message)
+            );
+        }
+
+    </script>
+<footer>
+
+      <b>@ Copyright © 2022 Dr Chandana | All Rights Reserved!</b>
+
+  </footer>
+
+</body>
+</html>
+
+
